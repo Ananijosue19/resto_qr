@@ -1,0 +1,6 @@
+import 'package:flutter/material.dart';
+import 'package:resto_qr/presentation/screens/menu.dart';
+
+import '../presentation/screens/home.dart';
+
+final Map<String, WidgetBuilder> appRoutes = {'/menu': (context) => Menu()};
