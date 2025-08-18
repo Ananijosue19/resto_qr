@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:remixicon/remixicon.dart';
 
 import '../../core/utils/listItem.dart';
+import '../widgets/BtnIconText.dart';
 
 class Menu extends StatefulWidget {
   const Menu({super.key});
@@ -24,28 +25,10 @@ class _MenuState extends State<Menu> {
           Badge(
             padding: EdgeInsets.all(5),
             label: Text('1'),
-            child: ElevatedButton.icon(
-              icon: Icon(Remix.shopping_cart_line, color: Colors.white),
-              style: ButtonStyle(
-                shape: WidgetStatePropertyAll<RoundedRectangleBorder>(
-                  RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(10),
-                  ),
-                ),
-                backgroundColor: WidgetStatePropertyAll<Color>(
-                  Colors.deepOrangeAccent,
-                ),
-                padding: WidgetStatePropertyAll<EdgeInsets>(
-                  EdgeInsets.symmetric(
-                    vertical: MediaQuery.sizeOf(context).width < 600 ? 12 : 15,
-                    horizontal: MediaQuery.sizeOf(context).width < 600
-                        ? 10
-                        : 30,
-                  ),
-                ),
-              ),
+            child: BtnIconText(
+              text: 'Panier',
+              icon: Remix.shopping_cart_line,
               onPressed: () {},
-              label: Text('Panier', style: TextStyle(color: Colors.white)),
             ),
           ),
           SizedBox(width: 20),
@@ -63,49 +46,6 @@ class _MenuState extends State<Menu> {
               ),
               elevation: WidgetStatePropertyAll(0),
             ),
-            /*SingleChildScrollView(
-              scrollDirection: Axis.horizontal,
-              child: Row(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: List.generate(
-                  categorie.length,
-                  (index) => Padding(
-                    padding: const EdgeInsets.only(
-                      right: 18.0,
-                      top: 10,
-                      bottom: 10,
-                    ),
-                    child: ElevatedButton(
-                      style: ButtonStyle(
-                        shape: WidgetStatePropertyAll<RoundedRectangleBorder>(
-                          RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(10),
-                          ),
-                        ),
-                        backgroundColor: WidgetStatePropertyAll<Color>(
-                          Colors.deepOrangeAccent,
-                        ),
-                        padding: WidgetStatePropertyAll<EdgeInsets>(
-                          EdgeInsets.symmetric(
-                            vertical: MediaQuery.sizeOf(context).width < 600
-                                ? 12
-                                : 15,
-                            horizontal: MediaQuery.sizeOf(context).width < 600
-                                ? 20
-                                : 30,
-                          ),
-                        ),
-                      ),
-                      onPressed: () {},
-                      child: Text(
-                        categorie[index],
-                        style: TextStyle(color: Colors.white),
-                      ),
-                    ),
-                  ),
-                ),
-              ),
-            ),*/
             SizedBox(height: 10),
             Expanded(
               child: DefaultTabController(
@@ -154,7 +94,92 @@ class _MenuState extends State<Menu> {
                             (index) => GridView.count(
                               crossAxisCount: siz < 600 ? 1 : 2,
                               children: List.generate(5, (index) {
-                                return Card(color: Colors.red);
+                                return Card(
+                                  child: Column(
+                                    mainAxisSize: MainAxisSize.min,
+                                    children: [
+                                      Expanded(
+                                        flex: 1,
+                                        child: Container(
+                                          child: Image.network(
+                                            'https://images.pexels.com/photos/1640777/pexels-photo-1640777.jpeg',
+                                            fit: BoxFit.fill,
+                                            width: double.infinity,
+                                          ),
+                                        ),
+                                      ),
+                                      Expanded(
+                                        flex: 1,
+                                        child: Padding(
+                                          padding: EdgeInsetsGeometry.symmetric(
+                                            horizontal: 20,
+                                            vertical: 35,
+                                          ),
+                                          child: Column(
+                                            mainAxisSize: MainAxisSize.min,
+                                            mainAxisAlignment:
+                                                MainAxisAlignment.spaceAround,
+                                            children: [
+                                              Row(
+                                                mainAxisAlignment:
+                                                    MainAxisAlignment
+                                                        .spaceBetween,
+                                                children: [
+                                                  Text(
+                                                    'Vin Rouge - Côtes du Rhône',
+                                                    style: TextStyle(
+                                                      fontSize: 18,
+                                                    ),
+                                                  ),
+                                                  Text(
+                                                    '28.00€',
+                                                    style: TextStyle(
+                                                      fontSize: 18,
+                                                      color: Colors.redAccent,
+                                                    ),
+                                                  ),
+                                                ],
+                                              ),
+                                              Container(
+                                                alignment: Alignment.topLeft,
+                                                child: Text(
+                                                  'Bouteille de vin rouge, millésime 2020',
+                                                ),
+                                              ),
+                                              Row(
+                                                mainAxisAlignment:
+                                                    MainAxisAlignment
+                                                        .spaceBetween,
+                                                children: [
+                                                  Container(
+                                                    decoration: BoxDecoration(
+                                                      color: Colors.greenAccent,
+                                                      borderRadius:
+                                                          BorderRadius.circular(
+                                                            15,
+                                                          ),
+                                                    ),
+                                                    padding:
+                                                        EdgeInsetsGeometry.symmetric(
+                                                          horizontal: 15,
+                                                          vertical: 5,
+                                                        ),
+                                                    child: Text('Disponible'),
+                                                  ),
+                                                  BtnIconText(
+                                                    text: 'Ajouter',
+                                                    icon: Remix.add_fill,
+                                                    onPressed: () {},
+                                                  ),
+                                                ],
+                                              ),
+                                            ],
+                                          ),
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                );
                               }),
                             ),
                           ),
