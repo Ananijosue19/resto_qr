@@ -28,7 +28,9 @@ class _MenuState extends State<Menu> {
             child: BtnIconText(
               text: 'Panier',
               icon: Remix.shopping_cart_line,
-              onPressed: () {},
+              onPressed: () {
+                Navigator.pushNamed(context, '/panier');
+              },
             ),
           ),
           SizedBox(width: 20),
