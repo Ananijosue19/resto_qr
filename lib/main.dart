@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:resto_qr/presentation/screens/admin/admin_connexion.dart';
 import 'package:resto_qr/presentation/screens/home.dart';
 import 'package:resto_qr/routes/app_routes.dart';
 
@@ -15,7 +16,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       routes: appRoutes,
-      home: const Home(),
+      home: const AdminConnexion(),
     );
   }
 }
