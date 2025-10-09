@@ -15,7 +15,7 @@ class _SuivieCommandeState extends State<SuivieCommande> {
       appBar: AppBar(title: Text('Suivi de Commande')),
       body: SingleChildScrollView(
         child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 10.0),
+          padding: const EdgeInsets.symmetric(horizontal: 20.0),
           child: Column(
             mainAxisSize: MainAxisSize.min,
             spacing: 20,
@@ -46,9 +46,24 @@ class _SuivieCommandeState extends State<SuivieCommande> {
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
-                            CircleAvatar(child: Icon(Remix.time_line)),
-                            CircleAvatar(child: Icon(Remix.time_line)),
-                            CircleAvatar(child: Icon(Remix.time_line)),
+                            CircleAvatar(
+                              child: Icon(Remix.time_line),
+                              foregroundColor: Colors.white,
+                              backgroundColor: Colors.red,
+                              radius: 25,
+                            ),
+                            CircleAvatar(
+                              child: Icon(Remix.cake_3_fill),
+                              foregroundColor: Colors.white,
+                              backgroundColor: Colors.deepOrange,
+                              radius: 25,
+                            ),
+                            CircleAvatar(
+                              child: Icon(Remix.task_line),
+                              foregroundColor: Colors.white,
+                              backgroundColor: Colors.green,
+                              radius: 25,
+                            ),
                           ],
                         ),
                       ),
@@ -150,7 +165,10 @@ class _SuivieCommandeState extends State<SuivieCommande> {
                     ),
                   ),
                   onPressed: () {},
-                  child: Text('Ajouter des plats'),
+                  child: Text(
+                    'Ajouter des plats',
+                    style: TextStyle(color: Colors.black),
+                  ),
                 ),
               ),
               Text('Cette page se met à jour automatiquement'),
