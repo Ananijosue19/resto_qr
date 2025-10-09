@@ -81,7 +81,9 @@ class AdminConnexion extends StatelessWidget {
                           ),
                         ),
                         icon: Icon(Remix.login_box_line),
-                        onPressed: () {},
+                        onPressed: () {
+                          Navigator.pushNamed(context, '/pageAdmin');
+                        },
                         label: Text('Se connecter'),
                       ),
                     ),
