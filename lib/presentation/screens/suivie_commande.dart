@@ -138,7 +138,7 @@ class _SuivieCommandeState extends State<SuivieCommande> {
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
                             Text('1x Salade de Chèvre Chaud'),
-                            Text('12.50€'),
+                            Text('3500 CFA'),
                           ],
                         ),
                         Divider(),
@@ -146,7 +146,7 @@ class _SuivieCommandeState extends State<SuivieCommande> {
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
                             Text('Total'),
-                            Text('12.50€', style: TextStyle(color: Colors.red)),
+                            Text('3500 CFA', style: TextStyle(color: Colors.red)),
                           ],
                         ),
                       ],

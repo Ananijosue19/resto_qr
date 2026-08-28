@@ -9,6 +9,12 @@ class Home extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      floatingActionButton: FloatingActionButton.small(
+        onPressed: () => Navigator.pushNamed(context, '/admin'),
+        backgroundColor: Colors.grey[200],
+        child: const Icon(Remix.admin_line, color: Colors.black54),
+      ),
+      floatingActionButtonLocation: FloatingActionButtonLocation.endTop,
       body: SafeArea(
         child: LayoutBuilder(
           builder: (context, constraints) {
@@ -107,30 +113,56 @@ class Home extends StatelessWidget {
                       Container(
                         width: isLargeScreen ? 500 : double.infinity,
                         decoration: BoxDecoration(
-                          color: Color(0xFF1d293d),
-                          borderRadius: BorderRadius.circular(20),
+                          gradient: LinearGradient(
+                            colors: [Color(0xFF1d293d), Color(0xFF2c3e50)],
+                            begin: Alignment.topLeft,
+                            end: Alignment.bottomRight,
+                          ),
+                          borderRadius: BorderRadius.circular(24),
+                          boxShadow: [
+                            BoxShadow(
+                              color: Colors.black.withOpacity(0.2),
+                              blurRadius: 10,
+                              offset: Offset(0, 5),
+                            ),
+                          ],
                         ),
                         padding: EdgeInsets.symmetric(
-                          horizontal: isSmallScreen ? 20 : 30,
-                          vertical: isSmallScreen ? 15 : 20,
+                          horizontal: isSmallScreen ? 24 : 40,
+                          vertical: isSmallScreen ? 32 : 48,
                         ),
                         child: Column(
                           mainAxisSize: MainAxisSize.min,
                           children: [
+                            Container(
+                              padding: EdgeInsets.all(12),
+                              decoration: BoxDecoration(
+                                color: Colors.deepOrangeAccent.withOpacity(0.2),
+                                shape: BoxShape.circle,
+                              ),
+                              child: Icon(
+                                Remix.restaurant_2_fill,
+                                color: Colors.deepOrangeAccent,
+                                size: 32,
+                              ),
+                            ),
+                            SizedBox(height: 16),
                             Text(
                               'Table 12',
                               style: TextStyle(
                                 color: Colors.white,
-                                fontSize: tableFontSize,
-                                fontWeight: FontWeight.bold,
+                                fontSize: tableFontSize + 4,
+                                fontWeight: FontWeight.w900,
+                                letterSpacing: 1.2,
                               ),
                             ),
-                            SizedBox(height: 5),
+                            SizedBox(height: 8),
                             Text(
-                              'Bienvenue à votre table',
+                              'Prêt à commander ?',
                               style: TextStyle(
-                                color: Colors.white,
+                                color: Colors.white70,
                                 fontSize: subtitleFontSize,
+                                fontWeight: FontWeight.w500,
                               ),
                             ),
                           ],

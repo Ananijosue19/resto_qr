@@ -81,12 +81,15 @@ class AdminConnexion extends StatelessWidget {
                           ),
                         ),
                         icon: Icon(Remix.login_box_line),
-                        onPressed: () {},
+                        onPressed: () {
+                          // Simulation de connexion
+                          Navigator.pushReplacementNamed(context, '/admin/dashboard');
+                        },
                         label: Text('Se connecter'),
                       ),
                     ),
                     TextButton(
-                      onPressed: () {},
+                      onPressed: () => Navigator.pushReplacementNamed(context, '/'),
                       child: Text("Retour à l'accueil client"),
                     ),
                   ],
